@@ -1,0 +1,21 @@
+extends ./../layout/layout
+include ./../mixins/answers
+
+block content
+  section.row.mt-3
+    .card.p-0.w-50.mx-auto
+      .card-header
+        h3 Preguntele a ChatGPT
+      .card-body
+        .my-3
+          label.h5.form-label(for='exampleInputEmail1') Ingrese su pregunta:
+          textarea#txtQuestion.form-control(type='text' required)
+
+      .card-footer.px-0.text-center
+        button#btnResetQuestion.btn.btn-danger.w-25.mx-1 Reiniciar pregunta
+        button#btnQuestion.btn.btn-primary.w-25.mx-1 Preguntar
+
+  +answer()
+
+block scripts
+  script(src='/logic/free.js')

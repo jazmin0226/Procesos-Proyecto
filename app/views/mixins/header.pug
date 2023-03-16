@@ -1,0 +1,8 @@
+mixin headerNav(active)
+  header.fixed-top
+      nav.navbar.navbar-expand-lg.bg-dark.justify-content-center(data-bs-theme="dark")
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link(href='/' class=active ? 'active' : '') Desarrollo con ChatGPT
+          li.nav-item
+            a.nav-link(href='/free' class=!active ? 'active' : '') Preguntele a ChatGPT

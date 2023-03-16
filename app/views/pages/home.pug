@@ -1,0 +1,33 @@
+extends ./../layout/layout
+include ./../mixins/answers
+
+block content
+  section.row.mt-3
+    .card.p-0.w-50.mx-auto
+      .card-body
+        form#devQuestionForm(autocomplete='off', name='devQuestionForm')
+          .mb-3
+            label.form-label(for='sltFramework') Lenguaje de programación
+            select#sltFramework.form-select(name='sltFramework')
+
+          #QuestionSltContainer.mb-3
+            label.form-label(for='sltQuestion') Tipo de consulta
+            select#sltQuestion.form-select(name='sltQuestion')
+
+          .mb-3.form-check
+            input#chkQuestion.form-check-input(type='checkbox', name='chkQuestion')
+            label.form-check-label(for='chkQuestion') Ingresar mi propia pregunta
+
+          #QuestionContainer.mb-3.visually-hidden
+            label.form-label(for='txtQuestion') Ingrese su pregunta:
+            input#txtQuestion.form-control(type='text', aria-describedby='txtQuestionHelp', name='txtQuestion')
+            #txtQuestionHelp.form-text Intente ser lo más puntual posible.
+
+      .card-footer.px-0.text-center
+        button#btnAsk.btn.btn-primary.w-25.mx-1 Preguntar
+
+  +answer()
+
+
+block scripts
+  script(src='/logic/home.js')
